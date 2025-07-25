@@ -1,0 +1,25 @@
+@rootUrl = https://localhost:7144
+
+GET {{rootUrl}}/api/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYW9kYW5nIiwiaWQiOiIxIiwicm9sZSI6IkFkbWluIiwianRpIjoiNTEzNDQxZDUtZTY5OS00ZjRkLTk5ZmEtODI4OWEyMjExOTIyIiwiZXhwIjoxNzUzMDg0OTQyLCJpc3MiOiJLcnlzdGFsX0JFIiwiYXVkIjoiS3J5c3RhbCJ9.NLreGmR-f3XaED7kXGMPRf8UwbQ1HHDmhAng2F2Ctxc
+Accept: application/json
+###
+GET {{rootUrl}}/api/users/2
+Accept: application/json
+###
+POST {{rootUrl}}/api/auth/login
+Accept: application/json
+Content-Type: application/json
+{
+  "username": "baodang",
+  "password": "Go050398551245!"
+}
+###
+POST {{rootUrl}}/api/auth/signup
+Content-Type: application/json
+Accept: application/json
+{
+  "username": "SignupTest",
+  "email": "signup@gmail.com",
+  "password": "SignUpKekeke"
+}

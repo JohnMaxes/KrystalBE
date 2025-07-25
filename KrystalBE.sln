@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KrystalAPI", "KrystalAPI\KrystalAPI.csproj", "{23EF52BE-3FA9-4097-9DFE-12A403259395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KrystalAPITest", "KrystalAPITest\KrystalAPITest.csproj", "{F9595B7D-D894-4780-8BFF-1D296428DB47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23EF52BE-3FA9-4097-9DFE-12A403259395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23EF52BE-3FA9-4097-9DFE-12A403259395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23EF52BE-3FA9-4097-9DFE-12A403259395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23EF52BE-3FA9-4097-9DFE-12A403259395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9595B7D-D894-4780-8BFF-1D296428DB47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9595B7D-D894-4780-8BFF-1D296428DB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9595B7D-D894-4780-8BFF-1D296428DB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9595B7D-D894-4780-8BFF-1D296428DB47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF579411-4508-4749-BEA3-771C7B9E22CF}
+	EndGlobalSection
+EndGlobal
