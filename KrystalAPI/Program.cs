@@ -4,6 +4,7 @@ using KrystalAPI.Models;
 using KrystalAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -21,6 +22,23 @@ namespace KrystalAPI
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "KrystalAPI",
+                    Version = "v1",
+                    Description = "KrystalAPI documentation, empowered with OpenAPI",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                    {
+                        Name = "BaoDang",
+                        Email = "baodang9855.tdn@gmail.com",
+                        Url = new Uri("https://github.com/JohnMaxes/KrystalBE")
+                    }
+                });
+            });
 
             builder.Services.AddDbContext<UserContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
@@ -57,9 +75,17 @@ namespace KrystalAPI
 
             var app = builder.Build();
 
+            app.UseStaticFiles();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment()) {
                 app.MapOpenApi();
+                // app.UseSwagger(); // automatic swagger.json generation
+                app.UseSwaggerUI(c =>
+                    {
+                        c.SwaggerEndpoint("/swagger/swagger.json", "Static API Docs");
+                        c.RoutePrefix = "docs";
+                    }
+                );  // Static file mapping and serving
             }
             app.UseHttpsRedirection();
 
